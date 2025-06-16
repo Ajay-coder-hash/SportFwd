@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Athlete Profile";
+}
+
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Upload Media</h2>
+
+    <form asp-action="UploadMedia" method="post" enctype="multipart/form-data" class="border p-4 rounded shadow-sm bg-light">
+        <div class="mb-3">
+            <label for="file" class="form-label">Choose File</label>
+            <input type="file" name="file" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Media Title</label>
+            <input type="text" name="title" placeholder="Enter title" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Upload Media</button>
+    </form>
+
+    <div class="text-center mt-4">
+        <a href="/Home/Dashboard" class="btn btn-outline-secondary">Back to Dashboard</a>
+    </div>
+</div>
+

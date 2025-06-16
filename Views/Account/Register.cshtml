@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+
+<div class="container">
+    <h2>Register</h2>
+
+    <form asp-action="Register" method="post">
+        <input type="text" name="name" placeholder="Full Name" class="form-control" required />
+        <input type="email" name="email" placeholder="Email" class="form-control" required />
+        <input type="password" name="password" placeholder="Password" class="form-control mb-2" required />
+
+        <select name="role" class="form-control" required>
+            <option value="Athlete">Athlete</option>
+            <option value="Fan">Fan</option>
+            <option value="Sponsor">Sponsor</option>
+        </select>
+
+        <button type="submit" class="btn btn-success">Create Account</button>
+    </form>
+
+    <p style="text-align:center; margin-top: 10px;">
+        <a asp-action="Login" asp-controller="Account">Already have an account? Login</a>
+    </p>
+</div>
+

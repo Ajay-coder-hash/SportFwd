@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Media";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Media - SportFwd</title>
+    <link rel="stylesheet" href="~/css/media.css" />
+</head>
+<body>
+    <div class="media-container">
+        <h2 class="media-heading">Media</h2>
+        <a class="upload-button" asp-action="UploadMedia" asp-controller="Athlete">Upload Media</a>
+
+        <div class="media-grid">
+            <div class="media-card">
+                <img src="/images/basketball.jpg" alt="Placing Basketball">
+                <p>Placing Basketball</p>
+            </div>
+            <div class="media-card">
+                <img src="/images/swimming.jpg" alt="Swimmer In Action">
+                <p>Swimmer In Action</p>
+            </div>
+            <div class="media-card">
+                <img src="/images/football.jpg" alt="Scoring a Goal">
+                <p>Scoring a Goal</p>
+            </div>
+            <div class="media-card">
+                <img src="/images/cricket.jpg" alt="Hitting boundaries">
+                <p>Hitting six</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

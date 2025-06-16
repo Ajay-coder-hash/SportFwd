@@ -1,0 +1,34 @@
+﻿@model List<User>
+
+@{
+    ViewData["Title"] = "Team";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container team-page mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-white">Team</h2>
+        <select class="form-select w-auto">
+            <option selected>All Athletes</option>
+        </select>
+    </div>
+
+    <div class="row">
+        @foreach (var athlete in Model)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card text-center shadow-sm team-card">
+                    <img src="~/images/@athlete.Photo" class="card-img-top rounded-circle p-3" alt="Profile" />
+                    <div class="card-body">
+                        <h5 class="card-title">@athlete.Name</h5>
+                        <p class="card-text text-muted">@athlete.Role</p>
+                        <form asp-action="Follow" method="post">
+                            <input type="hidden" name="id" value="@athlete.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Follow</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

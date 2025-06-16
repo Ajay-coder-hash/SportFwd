@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - SportFwd</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+    <!-- Dashboard Button -->
+    <a href="/Home/Dashboard" class="dashboard-link">Dashboard</a>
+
+    <div class="login-container d-flex justify-content-center align-items-center">
+        <div class="login-box text-center">
+            <div class="logo-container mb-3">
+                <h1 class="logo">SportFwd</h1>
+            </div>
+
+            <h2 class="title">Login</h2>
+
+            <form asp-action="Login" method="post">
+                <input type="email" name="email" placeholder="Email" class="form-control mb-2" required />
+                <input type="password" name="password" placeholder="Password" class="form-control mb-2" required />
+
+                <select name="role" class="form-control mb-3" required>
+                    <option value="Athlete">Athlete</option>
+                    <option value="Fan">Fan</option>
+                    <option value="Sponsor">Sponsor</option>
+                </select>
+
+                <button type="submit" class="btn btn-login mb-2">Login</button>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="text-danger mt-2">@ViewBag.Error</div>
+                }
+            </form>
+
+            <p class="register-link">
+                <a asp-action="Register" asp-controller="Account">Create a new account</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+

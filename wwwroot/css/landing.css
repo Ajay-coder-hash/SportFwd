@@ -1,0 +1,68 @@
+﻿
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.hero-bg {
+    background: url('/images/niagara-campus-requested.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    color:#fff;
+}
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color:aqua;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+
+    .hero-content .btn {
+        margin: 10px;
+        min-width: 120px;
+    }
+
+.btn-login {
+    background-color: #1e3a8a; /* deep blue */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 500;
+}
+
+    .btn-login:hover {
+        background-color: #3b82f6;
+    }
+
+.btn-register {
+    background-color: #16a34a; /* green */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 500;
+}
+
+    .btn-register:hover {
+        background-color: #22c55e;
+    }
+
+
+

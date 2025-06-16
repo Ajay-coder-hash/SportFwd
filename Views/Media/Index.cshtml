@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Media Page";
+}
+<div class="text-center text-white">
+    <h1 class="display-4">Media Page</h1>
+    <p>This is the media dashboard for athletes to upload or view content.</p>
+
+    <form asp-controller="Media" asp-action="Upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*,video/*" class="form-control mb-2" required />
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success mt-3">@ViewBag.Message</div>
+    }
+</div>

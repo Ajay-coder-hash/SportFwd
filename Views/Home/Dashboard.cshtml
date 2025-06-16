@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    var role = Context.Session.GetString("UserRole");
+    var name = Context.Session.GetString("UserEmail")?.Split('@')[0];
+    Layout = null; // Custom full-screen dashboard
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>SportFwd - Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <div class="sidebar">
+            <h2 class="logo">SportFwd</h2>
+            <ul class="menu">
+                <li><a href="/Home/Dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="/Team/View"><i class="fas fa-users"></i> Team</a></li>
+                <li><a href="/Media/Index"><i class="fas fa-photo-video"></i> Media</a></li>
+                <li><a href="/Home/Privacy"><i class="fas fa-shield-alt"></i> Privacy</a></li>
+                <li><a href="/Account/Logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h1>Dashboard</h1>
+            <p class="welcome-text">Welcome, <strong>@name</strong>! You are logged in as <strong>@role</strong>.</p>
+
+            <div class="card-grid">
+                @if (role == "Athlete")
+                {
+                    <a href="/Athlete/Profile" class="card purple"><i class="fas fa-upload"></i><span>Upload Media</span></a>
+                }
+                else if (role == "Fan")
+                {
+                    <a href="/Fan/ExploreAthletes" class="card red"><i class="fas fa-users"></i><span>Explore Athletes</span></a>
+                }
+                else if (role == "Sponsor")
+                {
+                    <a href="/Sponsor/DiscoverAthletes" class="card teal"><i class="fas fa-hand-holding-heart"></i><span>Support Athletes</span></a>
+                }
+
+                @* Admin Card (optional for all roles in demo) *@
+                <a href="/Admin/ListAllUsers" class="card yellow"><i class="fas fa-cogs"></i><span>Admin</span></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

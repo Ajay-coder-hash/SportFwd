@@ -1,0 +1,27 @@
+﻿@model List<User>
+
+<h2>Discover Athletes</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var athlete in Model)
+        {
+            <tr>
+                <td>@athlete.Name</td>
+                <td>@athlete.Email</td>
+                <td>
+                    <form asp-action="SupportAthlete" method="post">
+                        <input type="hidden" name="id" value="@athlete.Id" />
+                        <button type="submit" class="btn btn-primary">Support</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Welcome to SportFwd";
+    Layout = null; // Removes nav + footer for clean splash view
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportFwd - Niagara College of Management</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/landing.css" asp-append-version="true" />
+</head>
+<body style="margin: 0; padding: 0; background: url('/images/niagara-campus-requested.jpg') no-repeat center center fixed; background-size: cover;">
+
+    <div class="d-flex justify-content-center align-items-center text-center" style="height: 100vh; background-color: rgba(0,0,0,0.6);">
+        <div>
+            <h1 class="text-white display-3 fw-bold">SportFwd</h1>
+            <p class="text-white fs-4">Niagara College of Management</p>
+            <div class="mt-4">
+                <a href="/Account/Login" class="btn btn-login me-3">Login</a>
+                <a href="/Account/Register" class="btn btn-register">Register</a>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
